@@ -1,0 +1,11 @@
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibXVzdGFwaGEgZWxmZXJzaW91aSIsImlhdCI6MTc2ODMxNDkxMn0.AGD5BUMdeAbzkoZ0m8cPy6w823VfjMytM6kM2tCQSlY
+
+###
+
+POST http://localhost:4000/login 
+Content-Type: application/json
+
+{
+	"username": "mustapha elfersioui"
+}
