@@ -1,22 +1,49 @@
 {
-  "dependencies": {
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1",
-    "jsonwebtoken": "^9.0.3"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.11"
-  },
   "name": "jwt",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "devAuth": "nodemon serverAuth.js",
-    "start": "node server.js"
+    "dev": "nodemon",
+    "build": "tsc",
+    "start": "node dist/serverAuth.js",
+    "migrate": "prisma migrate dev --name update",
+    "generate": "prisma generate",
+    "studio": "prisma studio --config ./prisma.config.ts"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BL4KCY/jwt.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BL4KCY/jwt/issues"
+  },
+  "homepage": "https://github.com/BL4KCY/jwt#readme",
+  "devDependencies": {
+    "@prisma/client": "^7.2.0",
+    "@types/ajv": "^0.0.5",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.0.8",
+    "ajv-formats": "^3.0.1",
+    "nodemon": "^3.1.11"
+  },
+  "dependencies": {
+    "@prisma/adapter-better-sqlite3": "^7.2.0",
+    "@prisma/client-runtime-utils": "^7.2.0",
+    "@types/bcrypt": "^6.0.0",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "ajv": "^8.17.1",
+    "ajv-errors": "^3.0.0",
+    "argon2": "^0.44.0",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "prisma": "^7.2.0"
+  },
   "type": "module"
 }
