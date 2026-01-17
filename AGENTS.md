@@ -25,6 +25,13 @@ Building a JWT (JSON Web Token) authentication system with Express.js that inclu
 2. ✅ Set up `LEARNING_REFERENCE.md` with Express.js and JWT best practices
 3. ✅ Established `.env` for storing secrets securely
 4. ✅ Implemented `authenticateToken` middleware for route protection
+5. ✅ Converted project to TypeScript (`src/serverAuth.ts`)
+6. ✅ Fixed CommonJS/ESM import issues with Express
+7. ✅ Created comprehensive learning guides in `LEARNING_REFERENCE.md`:
+   - JWT Complete Guide (structure, flow, implementation)
+   - ts-node Execution Engine
+   - npm Scripts (`npm start` vs `npm run dev`)
+   - CommonJS vs ESM module systems
 
 ---
 
