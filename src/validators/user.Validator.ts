@@ -1,6 +1,8 @@
-import ajv from "../lib/Validator.js";
-import userSchema from "../schemas/user.Schema.js";
+import ajv from "../lib/Validator";
+import userSchema from "../schemas/user.Schema";
 
-const userValidator = ajv.compile(userSchema);
+const userSignInValidator = ajv.compile({ ...userSchema, required: ["email", "password"] });
 
-export default userValidator;
+const userSignUpValidator = ajv.compile({ ...userSchema, required: ["name", "email", "password"] });
+
+export {userSignInValidator, userSignUpValidator};
