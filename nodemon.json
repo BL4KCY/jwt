@@ -1,6 +1,6 @@
 {
   "watch": ["src"],
   "ext": "ts",
-  "exec": "npm run build && node dist/server.js",
+  "exec": "tsx src/server.ts",
   "delay": "1000"
 }
