@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon",
     "build": "tsc",
-    "start": "node dist/serverAuth.js",
+    "start": "node dist/server.js",
     "migrate": "prisma migrate dev --name update",
     "generate": "prisma generate",
     "studio": "prisma studio --config ./prisma.config.ts"
@@ -28,7 +28,9 @@
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^25.0.8",
     "ajv-formats": "^3.0.1",
-    "nodemon": "^3.1.11"
+    "chalk": "^5.6.2",
+    "nodemon": "^3.1.11",
+    "tsx": "^4.21.0"
   },
   "dependencies": {
     "@prisma/adapter-better-sqlite3": "^7.2.0",
