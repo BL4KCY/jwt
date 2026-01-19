@@ -1,7 +1,6 @@
 import { JSONSchemaType } from "ajv";
 import { User } from "../interfaces/user.Interface";
 
-
 const userSchema: JSONSchemaType<User> = {
 	type: "object",
 	properties: {
@@ -13,7 +12,14 @@ const userSchema: JSONSchemaType<User> = {
 	additionalProperties: false,
 	errorMessage: {
 		properties: {
-			password: "test"
+			name: "Username must be 3-15 characters and start with a letter",
+			email: "Please provide a valid email address",
+			password: "Password must be at least 12 characters with uppercase, lowercase, number, and special character (@$!%*?&)"
+		},
+		required: {
+			name: "Username is required",
+			email: "Email is required",
+			password: "Password is required"
 		}
 	}
 }
