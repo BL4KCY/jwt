@@ -2,9 +2,9 @@ import Ajv, { Format } from "ajv"
 import addFormats from "ajv-formats"
 import addErrors from 'ajv-errors'
 
-const ajv = new Ajv({allErrors: true});
+const ajv = new Ajv({allErrors: true, useDefaults: true});
 addFormats(ajv);
-addErrors(ajv, {keepErrors: false});
+addErrors(ajv)
 
 const formats = {
 	username: /^[a-zA-Z][a-zA-Z0-9_.-]{2,19}$/,
