@@ -3,9 +3,30 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibXVzdGFwa
 
 ###
 
-POST http://localhost:4000/login 
+POST http://localhost:3000/auth/signup 
 Content-Type: application/json
 
 {
-	"username": "mustapha elfersioui"
+	"name": "user",
+	"email": "test@email.com",
+	"password": "changeme"
+}
+
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+	"email": "test@email.com",
+	"password": "changeme"
+}
+
+###
+
+POST http://localhost:3000/auth/refresh
+Content-Type: application/json
+
+{
+	"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1mc2pAZW1haWwuY29tIiwiaWQiOiI4MDljZDliMS1jNGM5LTQ0NDItYjhmNi03OGJkY2Y4YzZmZTgiLCJpYXQiOjE3Njg5Mzk3NjIsImV4cCI6MTc3MTUzMTc2Mn0.uDIg4RygpulHW2OTgclUKwAYVPkKBRQIKziJ4a_0OBI"
 }
