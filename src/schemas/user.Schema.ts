@@ -17,9 +17,9 @@ const userSchema: JSONSchemaType<User> = {
 			password: "Password must be at least 12 characters with uppercase, lowercase, number, and special character (@$!%*?&)"
 		},
 		required: {
-			name: "Username is required",
-			email: "Email is required",
-			password: "Password is required"
+			name: "Username is required..!",
+			email: "Email is required..!",
+			password: "Password is required..!"
 		}
 	}
 }
