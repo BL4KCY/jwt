@@ -7,8 +7,7 @@ export async function signupController(req: Request, res: Response, next: NextFu
 	try {
 		const { name, password, email } = req.body;
 		const userStatus = await addUser({ name: name, email: email, password: password });
-		res.cookie('token', userStatus);
-		res.json(userStatus);
+		res.status(201).json(userStatus);
 	} catch (error) {	
 		next(error); // send error to global handler
 	}
