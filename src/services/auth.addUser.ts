@@ -1,6 +1,7 @@
+import { error } from "node:console";
 import { User } from "../interfaces/user.Interface";
 import { prisma } from "../lib/prisma";
-import { getTokens } from "./auth.getTokens";
+import { tokensGenerator } from "./auth.tokensGenerator";
 import bcrypt from 'bcrypt'
 
 
@@ -15,5 +16,7 @@ export async function addUser(user: User) {
 		}
 	})
 
-	return getTokens({ id: createdUser.id,email: user.email })
+	if (!createdUser) throw error('[addUser]: User doesn\'t exist !!')
+
+	return tokensGenerator({ id: createdUser.id, email: user.email })
 }

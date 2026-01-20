@@ -1,9 +1,8 @@
 import { User as u } from "../interfaces/user.Interface";
 import { prisma } from "../lib/prisma";
-import { getTokens } from "./auth.getTokens";
+import { tokensGenerator } from "./auth.tokensGenerator";
 import bcrypt from 'bcrypt'
 import { error } from "node:console";
-import chalk from 'chalk'
 
 type User = Omit<u, "name">
 
@@ -16,7 +15,7 @@ export async function getUser(user: User) {
 
 	const verify = await bcrypt.compare(user.password, dbUser!.passwordHash);
 
-	if (!verify) throw error(`${chalk.bgRed('[getUser-error]:')} Invalid email or password !!`)
+	if (!verify) throw error('Invalid email or password !!')
 
-	return getTokens({ email: user.email, id: dbUser!.id})
+	return await tokensGenerator({ email: user.email, id: dbUser!.id })
 }
